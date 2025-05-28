@@ -1,5 +1,5 @@
-// app/(components)/ScrollIndicator.tsx
 "use client";
+
 import { motion, useScroll, useSpring } from "framer-motion";
 
 const ScrollIndicator = () => {

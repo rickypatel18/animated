@@ -7,10 +7,8 @@ import {
   AnimatePresence,
   motion,
 } from "framer-motion";
-import Navbar from "./(components)/Navbar";
-import Footer from "./(components)/Footer";
-import ScrollIndicator from "./(components)/ScrollIndicator";
 import { usePathname } from "next/navigation";
+import ScrollIndicator from "./(components)/ScrollIndicator";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,11 +31,8 @@ export default function RootLayout({
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         <LazyMotion features={domAnimation}>
           <ScrollIndicator />
-          <Navbar />
           <main className="pt-20 md:pt-24">
             <AnimatePresence mode="wait">
-              {" "}
-              {/* mode="wait" ensures exit animations complete first */}
               <motion.div
                 key={pathname}
                 initial={{ opacity: 0, y: 20 }}
@@ -50,7 +45,6 @@ export default function RootLayout({
               </motion.div>
             </AnimatePresence>
           </main>
-          <Footer />
         </LazyMotion>
       </body>
     </html>
